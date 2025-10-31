@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu código de login - {PROJECT_NAME}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            color: #2a2a2a;
+            margin: 0;
+            font-size: 24px;
+        }
+        .content p {
+            margin-bottom: 18px;
+            color: #555555;
+        }
+        .content strong {
+            color: #333333;
+        }
+        .code-box {
+            text-align: center;
+            background-color: #f9f9f9;
+            border-left: 4px solid #007bff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #007bff;
+        }
+        .highlight {
+            background-color: #f9f9f9;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .highlight p {
+            margin: 0;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #888888;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Seu código de login</h1>
+        </div>
+
+        <div class="content">
+            <p>Olá {USER_NAME},</p>
+
+            <p>Recebemos uma solicitação de login na plataforma <strong>{PROJECT_NAME}</strong> usando o e-mail <strong>{USER_EMAIL}</strong>.</p>
+            
+            <p>Use o código abaixo para acessar sua conta:</p>
+
+            <div class="code-box">
+                {LOGIN_CODE}
+            </div>
+
+            <div class="highlight">
+                <p><strong>Este código é válido por {EXPIRATION_MINUTES} minutos.</strong></p>
+            </div>
+
+            <p>Se você não fez essa solicitação, pode ignorar este e-mail com segurança. Nenhuma ação será tomada sem o uso deste código.</p>
+
+            <p>Se precisar de ajuda, entre em contato com nossa equipe de suporte.</p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; {CURRENT_YEAR} {PROJECT_NAME}. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>

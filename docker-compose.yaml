@@ -1,0 +1,64 @@
+services:
+  mada:
+    build: .
+    container_name: storage-repo-api
+    restart: unless-stopped
+    ports:
+      - "6868:6868"
+    environment:
+      - MINIO_ENDPOINT=minio:9000
+      - MINIO_ACCESS_KEY_ID=minioadmin
+      - MINIO_SECRET_ACCESS_KEY=senha
+      - MINIO_BUCKET=uploads
+      - JWT_STORAGE_UPLOAD_SECRET=senha
+      - API_PORT=6868
+      - EMAIL_AUTH_USER=email
+      - EMAIL_AUTH_PASS=senha
+      - EMAIL_HOST=
+      - EMAIL_PORT=465
+      - REDIS_HOST=redisdb
+      - REDIS_PORT=6370
+      - REDIS_PASSWORD=senha
+      - SELF_HOST=www.sanisamojrepository.com/image-repo # Caso use algum proxy
+    networks:
+      - image-repo-network
+    depends_on:
+      - minio
+
+  minio:
+    image: minio/minio
+    container_name: storageminio
+    restart: unless-stopped
+    ports:
+      - "9000:9000" 
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    environment:
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=senha
+    command: server /data --console-address ":9001"
+    networks:
+      - image-repo-network
+
+  redisdb:
+    image: redis
+    container_name: storage-redis
+    restart: unless-stopped
+    ports:
+      - "6370:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --requirepass senha
+    networks:
+      - image-repo-network
+
+volumes:
+  mongo-data:
+  redis-data:
+  minio_data:
+
+networks:
+  image-repo-network:
+    external: true
+    driver: bridge
