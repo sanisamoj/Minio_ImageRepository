@@ -40,8 +40,10 @@ REDIS_PASSWORD=
 
 ### Para acessar um dos arquivos do Storage:
 
-> https://www.sanisamojrepository.com/image-repo/files/9cca7e78-955e-438b-bb39-b8c15c93bef0.png
+> https://www.sanisamojrepository.com/image-repo/files/dbd3baa4-5872-49a1-b394-92f45e63a4b8.png
 
-> https://www.sanisamojrepository.com/image-repo/files/e287831f-e409-4dab-ad42-79dd4c3b6437.png
+> https://www.sanisamojrepository.com/image-repo/files/e6ca49ca-61e0-4e76-b92e-51ef213ec38b.webp
 
-> https://www.sanisamojrepository.com/image-repo/files/273cd4d8-15c3-4dbc-9c8c-08bfa09be046.gif
+> https://www.sanisamojrepository.com/image-repo/files/27f43ae4-190d-454d-80ca-67f1dab4e1e0.mp4
+
+> https://www.sanisamojrepository.com/image-repo/files/c45bf718-34e8-4b6b-a07f-8025cf074ab1.gif
